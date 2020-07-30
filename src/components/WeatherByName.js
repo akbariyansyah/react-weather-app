@@ -1,30 +1,10 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import Card from './Card'
-
+import {loadByName} from '../services/WeatherApi'
 export default class WeatherByName extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            country: "",
-        }
-    }
-
-    changeCountry = event => {
-        this.setState({
-            ...this.state,
-            country: event.target.value
-        });
-    }
-    getData = () => {
-        console.log(this.props.city)
-        console.log(this.props.country)
-        console.log(this.props.app_key)
-        Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.props.city},${this.props.country}&APPID=${this.props.app_key}`)
-            .then(res => {
-                    this.props.load(res)
-            })
-            .catch(err => console.log(err))
+    getData = (city,country,app_key) => {
+       loadByName(city,country,app_key).then(res => this.props.load(res))
     }
     render() {
         let card
@@ -50,8 +30,8 @@ export default class WeatherByName extends Component {
                 </select>
                 <input type="text" name="city" onChange={this.props.onChange} placeholder="Enter city's name"></input>
 
-                <button onClick={() => this.getData()}>get weather</button>
-            {card}
+                <button onClick={() => this.getData(this.props.city,this.props.country,this.props.app_key)}>get weather</button>
+                {card}
             </div>
         )
     }
