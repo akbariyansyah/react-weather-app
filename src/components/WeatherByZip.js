@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react'
 import Axios from 'axios'
+
 export default function WeatherByName() {
 
     const [weather, setWeather] = useState({})
