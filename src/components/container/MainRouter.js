@@ -1,19 +1,19 @@
 import React from 'react';
-import WeatherByName from '../WeatherByName'
+import ByNameContainer from './ByNameContainer'
 import WeatherById from '../WeatherById'
 import WeatherByZip from '../WeatherByZip'
-import Card from '../Card'
+
 import Nav from '../Nav'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
-function Container() {
+function MainRouter() {
   return (
     <Router>
       <div className="App">
         <Nav />
         <Switch>
-          <Route path="/" exact component={WeatherByName} />
+          <Route path="/" exact component={ByNameContainer} />
           <Route path="/id" component={WeatherById} />
           <Route path="/zip" exact component={WeatherByZip} />
         </Switch>
@@ -23,4 +23,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default MainRouter;
