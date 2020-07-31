@@ -23,12 +23,13 @@ export default class WeatherByCord extends Component {
         }
         return (
             <div>
+                <button className="btn btn-primary">sdsd</button>
                 <h2>get weather by coordinates</h2>
-             
+
                 <input type="text" name="lat" onChange={this.props.onChange} placeholder="Enter city's latitude"></input>
                 <input type="text" name="lon" onChange={this.props.onChange} placeholder="Enter city's longitude"></input>
 
-                <button onClick={() => this.getData(this.props.lat, this.props.lon, this.props.app_key)}>get weather</button>
+                <button className="btn btn-success" onClick={() => this.getData(this.props.lat, this.props.lon, this.props.app_key)}>get weather</button>
                 {card}
             </div>
         )

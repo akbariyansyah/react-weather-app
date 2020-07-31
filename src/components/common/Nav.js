@@ -5,21 +5,36 @@ import '../../App.css';
 function Nav() {
     return (
         <div className="navbar">
-            <ul className="nav-links">
-                <Link to="/">
-                    <li>name</li>
-                </Link>
-                <Link to="/id">
-                    <li>id</li>
-                </Link>
-                <Link to="/zip">
-                    <li>zip</li>
-                </Link>
-                <Link to="/cord">
-                    <li>coordinates</li>
-                </Link>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <Link to="/">
+                                <p class="nav-link" href="#">Name</p>
+                            </Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link to="/id">
+                                <p class="nav-link" href="#">id</p>
+                            </Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link to="/zip">
+                                <p class="nav-link" href="#">zip</p>
+                            </Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link to="/cord">
+                                <p class="nav-link" href="#">coordinates</p>
+                            </Link>
+                        </li>
 
-            </ul>
+                    </ul>
+                </div>
+            </nav>
         </div>
     );
 }
