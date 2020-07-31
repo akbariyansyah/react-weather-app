@@ -4,26 +4,25 @@ import rain_cloud_weather_2 from '../../assets/sun-weather.gif'
 import temperature from '../../assets/temperature-weather.gif'
 import wind from '../../assets/windy-weather.gif'
 import map from '../../assets/map-marker.gif'
+import { getFullDate } from '../variables/variables'
 export default function Card(props) {
 
-    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var d = new Date();
-    var dayName = days[d.getDay()];
 
     const conventTemp = temp => {
         let cel = Math.floor(temp - 273)
         return cel
     }
+    const fullDate = getFullDate()
     return (
         <div className="display-card">
             <h1 className="display-4 header">
-                <img style={{height:70,paddingRight:10}} src={map}></img>
+                <img style={{ height: 70, paddingRight: 10 }} src={map}></img>
                 {props.city},
                 {props.country}
-                </h1>
+            </h1>
             <img style={{ height: 250, marginLeft: "16%" }} src={rain_cloud_weather_2}></img>
             <p className="desc">{props.desc}</p>
-            <p className="day">{dayName}</p>
+            <p className="day">{fullDate}</p>
 
             <table className="info">
                 <tr>
@@ -36,17 +35,17 @@ export default function Card(props) {
 
                     </td>
                     <td> <h3>
-                        {conventTemp(props.tempMax)}&deg; C 
+                        {conventTemp(props.tempMax)}&deg; C
                         </h3>
-                        </td>
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                
 
-                        <h3>  
-                        {conventTemp(props.tempMin)}&deg; C</h3>
-                        </td>
+
+                        <h3>
+                            {conventTemp(props.tempMin)}&deg; C</h3>
+                    </td>
                 </tr>
             </table>
 
