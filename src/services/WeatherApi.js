@@ -17,9 +17,15 @@ const loadByZip = (city_zip, country, app_key) => {
     return axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city_zip},${country}&APPID=${app_key}`)
         .then(res => {
             return res
-
         })
 
         .catch(err => console.log(err))
 }
-export { loadByName, loadById, loadByZip }
+const loadByCord = (lat, lon, app_key) => {
+    return axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${app_key}`)
+        .then(res => {
+            return res
+        })
+        .catch(err => console.log(err))
+}
+export { loadByName, loadById, loadByZip,loadByCord }

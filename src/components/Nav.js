@@ -15,6 +15,9 @@ function Nav() {
                 <Link to="/zip">
                     <li>zip</li>
                 </Link>
+                <Link to="/cord">
+                    <li>coordinates</li>
+                </Link>
 
             </ul>
         </div>
