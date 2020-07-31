@@ -6,6 +6,7 @@ import ByZipContainer from '../container/ByZipContainer'
 
 import Nav from '../common/Nav'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Header from '../common/Header';
 
 
 function MainRouter() {
@@ -13,6 +14,7 @@ function MainRouter() {
     <Router>
       <div>
         <Nav />
+        <Header />
         <Switch>
           <Route path="/" exact component={ByNameContainer} />
           <Route path="/id" component={ByIdContainer} />

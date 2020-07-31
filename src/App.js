@@ -9,9 +9,7 @@ function App() {
       <div className="row">
 
         <div className="col-lg-12">
-          <div className="main-content">
             <MainRouter />
-          </div>
         </div>
       </div>
 
