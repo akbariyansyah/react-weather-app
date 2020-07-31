@@ -3,6 +3,7 @@ const initialState = {
     show: false,
     city: "",
     country: "",
+    city_id : "",
     display: {
         cityName: "",
         temp: 0,
@@ -14,7 +15,7 @@ const initialState = {
     }
 }
 const reducer = (state = initialState, action) => {
-    // console.log(action.value)
+    // console.log(action)
     // console.log(state.country)
     switch (action.type) {
         case "LOAD":

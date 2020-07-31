@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
 import Card from './Card'
-import {loadByName} from '../services/WeatherApi'
+import { loadByName } from '../services/WeatherApi'
 export default class WeatherByName extends Component {
-    getData = (city,country,app_key) => {
-       loadByName(city,country,app_key).then(res => this.props.load(res))
+    getData = (city, country, app_key) => {
+        loadByName(city, country, app_key).then(res => this.props.load(res))
     }
     render() {
         let card
@@ -30,7 +29,7 @@ export default class WeatherByName extends Component {
                 </select>
                 <input type="text" name="city" onChange={this.props.onChange} placeholder="Enter city's name"></input>
 
-                <button onClick={() => this.getData(this.props.city,this.props.country,this.props.app_key)}>get weather</button>
+                <button onClick={() => this.getData(this.props.city, this.props.country, this.props.app_key)}>get weather</button>
                 {card}
             </div>
         )

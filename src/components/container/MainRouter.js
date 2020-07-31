@@ -5,6 +5,7 @@ import WeatherByZip from '../WeatherByZip'
 
 import Nav from '../Nav'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import ByIdContainer from './ByIdContainer';
 
 
 function MainRouter() {
@@ -14,7 +15,7 @@ function MainRouter() {
         <Nav />
         <Switch>
           <Route path="/" exact component={ByNameContainer} />
-          <Route path="/id" component={WeatherById} />
+          <Route path="/id" component={ByIdContainer} />
           <Route path="/zip" exact component={WeatherByZip} />
         </Switch>
 
