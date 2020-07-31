@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Card from './Card'
-import { loadByZip } from '../services/WeatherApi'
+import Card from  '../common/Card'
+import { loadByZip } from '../../services/WeatherApi'
 export default class WeatherByName extends Component {
     getData = (city_zip, country, app_key) => {
         loadByZip(city_zip, country, app_key).then(res => this.props.load(res))

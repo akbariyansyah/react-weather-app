@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Card from './Card'
-import { loadByName } from '../services/WeatherApi'
+import Card from  '../common/Card'
+import { loadByName } from '../../services/WeatherApi'
 export default class WeatherByName extends Component {
     getData = (city, country, app_key) => {
         loadByName(city, country, app_key).then(res => this.props.load(res))

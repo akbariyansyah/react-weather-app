@@ -1,10 +1,11 @@
 import React from 'react';
-import ByNameContainer from './ByNameContainer'
-import ByIdContainer from './ByIdContainer';
-import Nav from '../Nav'
+import ByNameContainer from '../container/ByNameContainer'
+import ByIdContainer from '../container/ByIdContainer'
+import ByCordContainer from '../container/ByCordContainer'
+import ByZipContainer from '../container/ByZipContainer'
+
+import Nav from '../common/Nav'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import ByZipContainer from './ByZipContainer';
-import ByCordContainer from './ByCordContainer';
 
 
 function MainRouter() {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import React, { Component } from 'react'
-import WeatherById from '../WeatherById'
+import WeatherById from '../pages/WeatherById'
 class ByIdContainer extends Component {
     render() {
         return (

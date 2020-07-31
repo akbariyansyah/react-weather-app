@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import '../App.css'
+import React from 'react'
+import '../../App.css'
 import CountUp from 'countup';
-import rain_cloud_weather_2 from '../assets/rain-cloud-weather-2.gif'
+import rain_cloud_weather_2 from '../../assets/rain-cloud-weather-2.gif'
 export default function Card(props) {
     var today = new Date();
 

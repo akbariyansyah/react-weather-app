@@ -1,13 +1,9 @@
-import React, { Component, useState } from 'react'
-import Axios from 'axios'
-import Card from './Card'
-import { loadById } from '../services/WeatherApi'
+import React from 'react'
+import Card from  '../common/Card'
+import { loadById } from '../../services/WeatherApi'
 export default function WeatherById(props) {
-    console.log(props.city_id, props.app_key)
     const loadData = (city_id, app_key) => {
         loadById(city_id, app_key).then(res => props.load(res))
-
-
     }
     let card
     if (props.show) {

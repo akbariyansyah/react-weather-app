@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import React, { Component } from 'react'
-import WeatherByCord from '../WeatherByCord'
+import WeatherByCord from '../pages/WeatherByCord'
 class ByCordContainer extends Component {
     render() {
         return (
