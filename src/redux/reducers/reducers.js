@@ -13,6 +13,7 @@ const initialState = {
         temp: 0,
         tempMax: 0,
         tempMin: 0,
+        wind: 0,
         desc: "",
         icon: ""
 
@@ -31,6 +32,7 @@ const reducer = (state = initialState, action) => {
                     temp: action.value.data.main.temp,
                     tempMax: action.value.data.main.temp_max,
                     tempMin: action.value.data.main.temp_min,
+                    wind : action.value.data.wind.speed,
                     countryName : action.value.data.sys.country,
                     desc: action.value.data.weather[0].description,
                     icon: action.value.data.weather[0].icon

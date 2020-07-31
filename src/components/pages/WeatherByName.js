@@ -15,6 +15,7 @@ export default class WeatherByName extends Component {
                 temp={this.props.display.temp}
                 tempMax={this.props.display.tempMax}
                 tempMin={this.props.display.tempMin}
+                wind={this.props.display.wind}
                 desc={this.props.display.desc}
                 icon={this.props.display.icon}
             />
