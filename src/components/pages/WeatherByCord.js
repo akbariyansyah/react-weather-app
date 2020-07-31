@@ -7,10 +7,10 @@ import swal from 'sweetalert'
 export default function WeatherByCord(props) {
     const getData = (lat, lon, app_key) => {
         loadByCord(lat, lon, app_key).then(res => {
-            if (res === undefined) {
-                swal("Oops...!", "City not found!", "error");
-            } else {
+            if (res !== undefined) {
                 props.load(res)
+            } else {
+                swal("Oops...!", "City not found!", "error");
             }
         })
     }

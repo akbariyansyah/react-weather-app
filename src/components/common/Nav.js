@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import '../../App.css';
-
+import aircraft from '../../assets/aircraft.gif'
 function Nav() {
     return (
         <div className="navbar" id="nav">
@@ -31,7 +31,10 @@ function Nav() {
                                 <p class="nav-link" href="#">coordinates</p>
                             </Link>
                         </li>
-
+                        <li class="nav-item">
+                            <img style={{ height: 30, marginLeft: "16%" }} alt="aircraft" src={aircraft}></img>
+                        </li>
+                       
                     </ul>
                 </div>
             </nav>

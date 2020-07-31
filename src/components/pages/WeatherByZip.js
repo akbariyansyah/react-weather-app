@@ -7,10 +7,10 @@ import swal from 'sweetalert'
 export default function WeatherByZip(props) {
     const getData = (city_zip, country, app_key) => {
         loadByZip(city_zip, country, app_key).then(res => {
-            if (res === undefined) {
-                swal("Oops...!", "City not found!", "error");
-            } else {
+            if (res !== undefined) {
                 props.load(res)
+            } else {
+                swal("Oops...!", "City not found!", "error");
             }
         })
     }

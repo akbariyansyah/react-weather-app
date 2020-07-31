@@ -60,7 +60,7 @@ body {
     width: 700px;
     position: absolute;
     margin-left: 17%;
-    margin-top: -25%;
+    margin-top: -22%;
 }
 .byName input, .byId input, .byCord input, .byZip input {
     width: 900px;

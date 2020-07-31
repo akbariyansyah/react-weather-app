@@ -6,10 +6,10 @@ import swal from 'sweetalert'
 export default function WeatherByName(props) {
     const getData = (city, country, app_key) => {
         loadByName(city, country, app_key).then(res => {
-            if (res === undefined) {
-                swal("Oops...!", "City not found!", "error");
-            } else {
+            if (res !== undefined) {
                 props.load(res)
+            } else {
+                swal("Oops...!", "City not found!", "error");
             }
         })
     }
