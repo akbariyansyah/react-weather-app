@@ -28,7 +28,7 @@ export default function WeatherByCord(props) {
     if (props.lat === "" || props.lon === "") {
         button = <button data-toggle="modal" className="btn btn-secondary">get weather</button>
     } else {
-        button = <button data-toggle="modal" data-target="#exampleModal" className="btn btn-success" onClick={() => getData(props.lat, props.lon, props.app_key)}>get weather</button>
+        button = <button data-toggle="modal" data-target="#exampleModal" className="btn btn-outline-primary" onClick={() => getData(props.lat, props.lon, props.app_key)}>get weather</button>
     }
     return (
         <div className="byCord">

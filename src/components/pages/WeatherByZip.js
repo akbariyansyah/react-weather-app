@@ -21,20 +21,26 @@ export default function WeatherByZip(props) {
             icon={props.display.icon}
         />
     }
+    let button;
+    if (props.city_zip === "" || props.country === "") {
+        button = <button data-toggle="modal" className="btn btn-secondary">get weather</button>
+    } else {
+        button = <button data-toggle="modal" className="btn btn-outline-primary" data-target="#exampleModal" onClick={() => getData(props.city_zip, props.country, props.app_key)}>get weather</button>
+    }
     return (
-        <div>
-            <h2>get weather by zip</h2>
-            <select id="lang" onChange={props.onChangeCountry} value={props.country}>
+        <div className="byZip">
+            <p className="display-4">Get weather by zip</p>
+            <select id="lang" className="form-control" onChange={props.onChangeCountry} value={props.country}>
                 <option value="" selected>Select Country</option>
                 <option value="uk">UK</option>
                 <option value="us">USA</option>
                 <option value="CN">China</option>
                 <option value="ID">Indonesia</option>
             </select>
-            <input type="text" name="city_zip" onChange={props.onChange} placeholder="Enter city's zip"></input>
-
-            <button data-toggle="modal" data-target="#exampleModal" onClick={() => getData(props.city_zip, props.country, props.app_key)}>get weather</button>
-
+            <div class="input-group mb-3 mt-4">
+                <input type="text" name="city_zip" onChange={props.onChange} className="form-control" placeholder="Enter city's zip"></input>
+                {button}
+            </div>
             <Modal card={card} />
         </div>
     )
