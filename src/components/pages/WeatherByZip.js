@@ -2,10 +2,17 @@ import React from 'react'
 import Card from '../common/Card'
 import Modal from './Modal'
 import { loadByZip } from '../../services/WeatherApi'
+import swal from 'sweetalert'
 
 export default function WeatherByZip(props) {
     const getData = (city_zip, country, app_key) => {
-        loadByZip(city_zip, country, app_key).then(res => props.load(res))
+        loadByZip(city_zip, country, app_key).then(res => {
+            if (res === undefined) {
+                swal("Oops...!", "City not found!", "error");
+            } else {
+                props.load(res)
+            }
+        })
     }
     let card
     if (props.show) {

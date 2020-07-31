@@ -2,10 +2,16 @@ import React from 'react'
 import Card from '../common/Card'
 import { loadByName } from '../../services/WeatherApi'
 import Modal from './Modal'
-
+import swal from 'sweetalert'
 export default function WeatherByName(props) {
     const getData = (city, country, app_key) => {
-        loadByName(city, country, app_key).then(res => props.load(res))
+        loadByName(city, country, app_key).then(res => {
+            if (res === undefined) {
+                swal("Oops...!", "City not found!", "error");
+            } else {
+                props.load(res)
+            }
+        })
     }
     let card
     if (props.show) {

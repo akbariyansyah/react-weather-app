@@ -2,12 +2,16 @@ import React from 'react'
 import Card from '../common/Card'
 import { loadByCord } from '../../services/WeatherApi'
 import Modal from './Modal'
+import swal from 'sweetalert'
 
 export default function WeatherByCord(props) {
     const getData = (lat, lon, app_key) => {
         loadByCord(lat, lon, app_key).then(res => {
-            console.log(res)
-            props.load(res)
+            if (res === undefined) {
+                swal("Oops...!", "City not found!", "error");
+            } else {
+                props.load(res)
+            }
         })
     }
     let card
