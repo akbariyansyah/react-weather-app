@@ -4,7 +4,7 @@ import { loadByName } from '../../services/WeatherApi'
 import Modal from './Modal'
 
 export default function WeatherByName(props) {
-    const  getData = (city, country, app_key) => {
+    const getData = (city, country, app_key) => {
         loadByName(city, country, app_key).then(res => props.load(res))
     }
     let card
@@ -21,17 +21,21 @@ export default function WeatherByName(props) {
             icon={props.display.icon}
         />
     }
+    let button
+    if (props.city === "") {
+        button =  <button className="btn btn-secondary" disabled>get weather</button>
+    } else {
+        button = <button className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" onClick={() => getData(props.city, props.country, props.app_key)}>get weather</button>
+    }
     return (
-        <div>
-        <h2>get weather by name</h2>
-        <input type="text" name="city" onChange={props.onChange} placeholder="Enter city's name"></input>
-
-        <button data-toggle="modal" data-target="#exampleModal" onClick={() => getData(props.city, props.country, props.app_key)}>get weather</button>
-
-        <Modal card={card} />
-       
-
-    </div>
+        <div className="byName">
+            <p className="display-4">Get weather by name</p>
+            <div class="input-group mb-3">
+                <input type="text" name="city" onChange={props.onChange} className="form-control" placeholder="Enter city's name..." />
+                {button}
+            </div>
+            <Modal card={card} />
+        </div>
     )
 }
 

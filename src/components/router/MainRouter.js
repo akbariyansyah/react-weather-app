@@ -7,21 +7,22 @@ import ByZipContainer from '../container/ByZipContainer'
 import Nav from '../common/Nav'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from '../common/Header';
+import Footer from '../common/Footer';
 
 
 function MainRouter() {
   return (
     <Router>
-      <div>
-        <Nav />
-        <Header />
-        <Switch>
-          <Route path="/" exact component={ByNameContainer} />
-          <Route path="/id" component={ByIdContainer} />
-          <Route path="/zip" exact component={ByZipContainer} />
-          <Route path="/cord" exact component={ByCordContainer} />
-        </Switch>
-
+      <div className="router">
+          <Nav />
+          <Header />
+          <Switch>
+            <Route path="/" exact component={ByNameContainer} />
+            <Route path="/id" component={ByIdContainer} />
+            <Route path="/zip" exact component={ByZipContainer} />
+            <Route path="/cord" exact component={ByCordContainer} />
+          </Switch>
+          <Footer/>
       </div>
     </Router>
   );

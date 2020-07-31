@@ -20,12 +20,21 @@ export default function WeatherById(props) {
         icon={props.display.icon}
     />
     }
+    console.log(typeof(props.city_id))
+    let button
+    if (props.city_id === "") {
+        button =  <button className="btn btn-secondary" data-toggle="modal" disabled>get weather</button>
+    } else {
+        button =  <button className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" onClick={() => getData(props.city_id, props.app_key)}>get weather</button>
+    }
     return (
-        <div>
-            <h2>get weather by id</h2>
-            <input type="number" name="city_id" onChange={props.onChange} placeholder="Enter city's id"></input>
-            <button data-toggle="modal" data-target="#exampleModal" onClick={() => getData(props.city_id, props.app_key)}>get weather</button>
-            <Modal card={card} />
-        </div>
+         <div className="byId">
+         <p className="display-4">Get weather by ID</p>
+         <div class="input-group mb-3">
+         <input type="number" className="form-control" name="city_id" onChange={props.onChange} placeholder="Enter city's id"></input>
+             {button}
+         </div>
+         <Modal card={card} />
+     </div>
     )
 }
