@@ -13,6 +13,7 @@ export default function WeatherById(props) {
     if (props.show) {
         card = <Card
             city={props.display.cityName}
+            country={props.display.countryName}
             temp={props.display.temp}
             tempMax={props.display.tempMax}
             tempMin={props.display.tempMin}

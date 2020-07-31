@@ -18,6 +18,7 @@ export default function Card(props) {
         <div className="card">
             {/* <CountUp end={30} duration={3}/> */}
             <h1>{props.city}</h1>
+            <h1>{props.country}</h1>
             <h2>{conventTemp(props.temp)}&deg;
             
             </h2>

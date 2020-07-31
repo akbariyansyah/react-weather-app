@@ -9,6 +9,7 @@ const initialState = {
     lon : "",
     display: {
         cityName: "",
+        countryName: "",
         temp: 0,
         tempMax: 0,
         tempMin: 0,
@@ -30,6 +31,7 @@ const reducer = (state = initialState, action) => {
                     temp: action.value.data.main.temp,
                     tempMax: action.value.data.main.temp_max,
                     tempMin: action.value.data.main.temp_min,
+                    countryName : action.value.data.sys.country,
                     desc: action.value.data.weather[0].description,
                     icon: action.value.data.weather[0].icon
                 }

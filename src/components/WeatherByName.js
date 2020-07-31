@@ -10,6 +10,7 @@ export default class WeatherByName extends Component {
         if (this.props.show) {
             card = <Card
                 city={this.props.display.cityName}
+                country={this.props.display.countryName}
                 temp={this.props.display.temp}
                 tempMax={this.props.display.tempMax}
                 tempMin={this.props.display.tempMin}
