@@ -28,13 +28,29 @@ export default class WeatherByName extends Component {
                     <option value="uk">UK</option>
                     <option value="us">USA</option>
                     <option value="CN">China</option>
+                    <option value="JP">Jepang</option>
                     <option value="ID">Indonesia</option>
                 </select>
 
                 <input type="text" name="city" onChange={this.props.onChange} placeholder="Enter city's name"></input>
 
-                <button onClick={() => this.getData(this.props.city, this.props.country, this.props.app_key)}>get weather</button>
-                {card}
+                <button data-toggle="modal" data-target="#exampleModal" onClick={() => this.getData(this.props.city, this.props.country, this.props.app_key)}>get weather</button>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                {card}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
