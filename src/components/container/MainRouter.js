@@ -1,11 +1,9 @@
 import React from 'react';
 import ByNameContainer from './ByNameContainer'
-import WeatherById from '../WeatherById'
-import WeatherByZip from '../WeatherByZip'
-
+import ByIdContainer from './ByIdContainer';
 import Nav from '../Nav'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import ByIdContainer from './ByIdContainer';
+import ByZipContainer from './ByZipContainer';
 
 
 function MainRouter() {
@@ -16,7 +14,7 @@ function MainRouter() {
         <Switch>
           <Route path="/" exact component={ByNameContainer} />
           <Route path="/id" component={ByIdContainer} />
-          <Route path="/zip" exact component={WeatherByZip} />
+          <Route path="/zip" exact component={ByZipContainer} />
         </Switch>
 
       </div>

@@ -13,4 +13,13 @@ const loadById = (city_id, app_key) => {
         })
         .catch(err => console.log(err))
 }
-export { loadByName, loadById }
+const loadByZip = (city_zip, country, app_key) => {
+    return axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city_zip},${country}&APPID=${app_key}`)
+        .then(res => {
+            return res
+
+        })
+
+        .catch(err => console.log(err))
+}
+export { loadByName, loadById, loadByZip }

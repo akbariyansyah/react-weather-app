@@ -4,6 +4,7 @@ const initialState = {
     city: "",
     country: "",
     city_id : "",
+    city_zip:"",
     display: {
         cityName: "",
         temp: 0,

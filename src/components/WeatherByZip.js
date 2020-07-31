@@ -1,43 +1,38 @@
-import React, { Component, useState } from 'react'
-import Axios from 'axios'
-
-export default function WeatherByName() {
-
-    const [weather, setWeather] = useState({})
-    const [value, setValue] = useState({ value: "" })
-    const [key, setKey] = useState("165f80a4a96da8b814f1352ed82fd43a")
-    const [zip, setZip] = useState("")
-    const change = event => {
-        setValue({ value: event.target.value });
+import React, { Component } from 'react'
+import Card from './Card'
+import { loadByZip } from '../services/WeatherApi'
+export default class WeatherByName extends Component {
+    getData = (city_zip, country, app_key) => {
+        loadByZip(city_zip, country, app_key).then(res => this.props.load(res))
     }
-    const handleChange = e => {
-        e.preventDefault()
-        setZip(e.target.value)
+    render() {
+        let card
+        if (this.props.show) {
+            card = <Card
+                city={this.props.display.cityName}
+                temp={this.props.display.temp}
+                tempMax={this.props.display.tempMax}
+                tempMin={this.props.display.tempMin}
+                desc={this.props.display.desc}
+                icon={this.props.display.icon}
+            />
+        }
+        return (
+            <div>
+                <h2>get weather by zip</h2>
+                <select id="lang" onChange={this.props.onChangeCountry} value={this.props.country}>
+                    <option value="" selected>Select Country</option>
+                    <option value="uk">UK</option>
+                    <option value="us">USA</option>
+                    <option value="CN">China</option>
+                    <option value="ID">Indonesia</option>
+                </select>
+                <input type="text" name="city_zip" onChange={this.props.onChange} placeholder="Enter city's zip"></input>
+
+                <button onClick={() => this.getData(this.props.city_zip, this.props.country, this.props.app_key)}>get weather</button>
+                {card}
+            </div>
+        )
     }
-
-    const get = () => {
-        Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${zip},${value.value}&APPID=${key}`)
-            .then(res => {
-                setWeather(res)
-
-            })
-
-            .catch(err => console.log(err))
-        console.log(weather)
-    }
-
-    return (
-        <div>
-            <h2>get weather by zip </h2>
-            <select id="lang" onChange={change} value={value.value}>
-                <option value="" selected>Select Country</option>
-                <option value="uk">UK</option>
-                <option value="us">USA</option>
-                <option value="CN">China</option>
-                <option value="ID">Indonesia</option>
-            </select>
-            <input type="number" name="city" onChange={handleChange} placeholder="Enter city's zip code"></input>
-            <button onClick={get}>get weather</button>
-        </div>
-    )
 }
+
