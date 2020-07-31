@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Card from  '../common/Card'
+import Card from '../common/Card'
 import { loadByName } from '../../services/WeatherApi'
 export default class WeatherByName extends Component {
     getData = (city, country, app_key) => {
@@ -9,6 +9,7 @@ export default class WeatherByName extends Component {
         let card
         if (this.props.show) {
             card = <Card
+                key={new Date()}
                 city={this.props.display.cityName}
                 country={this.props.display.countryName}
                 temp={this.props.display.temp}
@@ -28,6 +29,7 @@ export default class WeatherByName extends Component {
                     <option value="CN">China</option>
                     <option value="ID">Indonesia</option>
                 </select>
+
                 <input type="text" name="city" onChange={this.props.onChange} placeholder="Enter city's name"></input>
 
                 <button onClick={() => this.getData(this.props.city, this.props.country, this.props.app_key)}>get weather</button>

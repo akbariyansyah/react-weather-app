@@ -23,7 +23,6 @@ export default class WeatherByCord extends Component {
         }
         return (
             <div>
-                <button className="btn btn-primary">sdsd</button>
                 <h2>get weather by coordinates</h2>
 
                 <input type="text" name="lat" onChange={this.props.onChange} placeholder="Enter city's latitude"></input>

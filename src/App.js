@@ -5,10 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
-    <div>
-      <button className="btn btn-primary">sdshgsj</button>
-      <h1>Welcome to the weather app</h1>
-      <MainRouter/>
+    <div className="container">
+      <div className="row">
+
+        <div className="col-lg-12">
+          <div className="main-content">
+            <MainRouter />
+          </div>
+        </div>
+      </div>
+
+
     </div>
   );
 }

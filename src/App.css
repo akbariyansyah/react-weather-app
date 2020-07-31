@@ -1,5 +1,23 @@
-.card {
+body {
+    font-family: 'Mulish', sans-serif;
+}
+.main-content {
+    width: 500px;
+    height: 500px;
+    background-color: seagreen;
+    margin: 10px auto;
+}
+.display-card {
+    margin: 0 auto;
     width: 400px;
     height: 400px;
-    background-color:white;
+    background-color:red;
+}
+.desc {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 200;
+}
+.day, .header {
+    text-align: center;
 }
