@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../common/Card'
 import { loadByCord } from '../../services/WeatherApi'
-import Modal from './Modal'
+import Modal from '../common/Modal'
 import swal from 'sweetalert'
 
 export default function WeatherByCord(props) {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from  '../common/Card'
-import Modal from './Modal'
+import Modal from '../common/Modal'
 import { loadById } from '../../services/WeatherApi'
 import swal from 'sweetalert'
 export default function WeatherById(props) {

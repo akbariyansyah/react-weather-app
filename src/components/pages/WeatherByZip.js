@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../common/Card'
-import Modal from './Modal'
+import Modal from '../common/Modal'
 import { loadByZip } from '../../services/WeatherApi'
 import swal from 'sweetalert'
 

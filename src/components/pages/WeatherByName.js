@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../common/Card'
 import { loadByName } from '../../services/WeatherApi'
-import Modal from './Modal'
+import Modal from '../common/Modal'
 import swal from 'sweetalert'
 export default function WeatherByName(props) {
     const getData = (city, country, app_key) => {
