@@ -10,6 +10,7 @@ export default function WeatherByCord(props) {
             if (res !== undefined) {
                 props.load(res)
             } else {
+                props.reset()
                 swal("Oops...!", "City not found!", "error");
             }
         })

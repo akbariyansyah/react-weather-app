@@ -9,7 +9,8 @@ export default function WeatherByName(props) {
             if (res !== undefined) {
                 props.load(res)
             } else {
-                swal("Oops...!", "City not found!", "error");
+                props.reset()
+                swal("Oops...!", "City not found!", "error")
             }
         })
     }
@@ -29,7 +30,7 @@ export default function WeatherByName(props) {
     }
     let button
     if (props.city === "") {
-        button =  <button className="btn btn-secondary" disabled>get weather</button>
+        button = <button className="btn btn-secondary" disabled>get weather</button>
     } else {
         button = <button className="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" onClick={() => getData(props.city, props.country, props.app_key)}>get weather</button>
     }

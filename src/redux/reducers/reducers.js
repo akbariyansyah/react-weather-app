@@ -3,10 +3,10 @@ const initialState = {
     show: false,
     city: "",
     country: "",
-    city_id : "",
-    city_zip:"",
-    lat : "",
-    lon : "",
+    city_id: "",
+    city_zip: "",
+    lat: "",
+    lon: "",
     display: {
         cityName: "",
         countryName: "",
@@ -16,12 +16,9 @@ const initialState = {
         wind: 0,
         desc: "",
         icon: ""
-
     }
 }
 const reducer = (state = initialState, action) => {
-    // console.log(action)
-    // console.log(state.country)
     switch (action.type) {
         case "LOAD":
             return {
@@ -32,8 +29,8 @@ const reducer = (state = initialState, action) => {
                     temp: action.value.data.main.temp,
                     tempMax: action.value.data.main.temp_max,
                     tempMin: action.value.data.main.temp_min,
-                    wind : action.value.data.wind.speed,
-                    countryName : action.value.data.sys.country,
+                    wind: action.value.data.wind.speed,
+                    countryName: action.value.data.sys.country,
                     desc: action.value.data.weather[0].description,
                     icon: action.value.data.weather[0].icon
                 }
@@ -45,6 +42,27 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 country: action.value
+            }
+        case "RESET":
+            return {
+                ...state,
+                show: false,
+                city: "",
+                country: "",
+                city_id: "",
+                city_zip: "",
+                lat: "",
+                lon: "",
+                display: {
+                    cityName: "",
+                    countryName: "",
+                    temp: 0,
+                    tempMax: 0,
+                    tempMin: 0,
+                    wind: 0,
+                    desc: "",
+                    icon: ""
+                }
             }
         default:
             return state

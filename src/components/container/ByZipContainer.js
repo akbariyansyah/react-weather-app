@@ -7,6 +7,7 @@ class ByZipContainer extends Component {
         return (
             <div>
                 <WeatherByZip
+                    reset={this.props.reset}
                     load={this.props.load}
                     onChange={this.props.onChange}
                     show={this.props.show}
@@ -35,7 +36,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         load: res => dispatch({ type: 'LOAD', value: res }),
         onChange: e => dispatch({ type: "CHANGE", value: { name: e.target.name, value: e.target.value } }),
-        onChangeCountry: e => dispatch({ type: "CHANGECOUNTRY", value: e.target.value })
+        onChangeCountry: e => dispatch({ type: "CHANGECOUNTRY", value: e.target.value }),
+        reset: () => dispatch({ type: "RESET" })
     }
 }
 

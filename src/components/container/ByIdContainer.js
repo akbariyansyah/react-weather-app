@@ -7,6 +7,7 @@ class ByIdContainer extends Component {
         return (
             <div>
                 <WeatherById
+                    reset={this.props.reset}
                     load={this.props.load}
                     onChange={this.props.onChange}
                     show={this.props.show}
@@ -36,6 +37,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         load: res => dispatch({ type: 'LOAD', value: res }),
         onChange: e => dispatch({ type: "CHANGE", value: { name: e.target.name, value: e.target.value } }),
+        reset: () => dispatch({ type: "RESET" })
     }
 }
 
