@@ -18,26 +18,47 @@ const getFullDate = () => {
 }
 const getWeathericon = props => {
     let weather
-    if (props.icon === "01d" || props.icon === "01n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="clear" src={clear}></img>
-    } else if (props.icon === "02d" || props.icon === "02n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="cloudy" src={cloudy}></img>
-    } else if (props.icon === "03d" || props.icon === "03n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="cloudy" src={cloudy}></img>
-    } else if (props.icon === "04d" || props.icon === "04n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="cloudy" src={cloudy}></img>
-    } else if (props.icon === "09d" || props.icon === "09n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="light_rain" src={light_rain}></img>
-    } else if (props.icon === "10d" || props.icon === "10n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="rain" src={rain}></img>
-    } else if (props.icon === "11d" || props.icon === "11n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="thunderstorm" src={thunderstorm}></img>
-    } else if (props.icon === "13d" || props.icon === "13n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="snow" src={snow}></img>
-    } else if (props.icon === "50d" || props.icon === "50n") {
-        weather = <img style={{ height: 250, marginLeft: "16%" }} alt="haze" src={haze}></img>
+    switch (props.icon) {
+        case "01d":
+        case "01n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="clear" src={clear}></img>
+            break;
+        case "02d":
+        case "02n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="cloudy" src={cloudy}></img>
+            break
+        case "03d":
+        case "03n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="cloudy" src={cloudy}></img>
+            break
+        case "04d":
+        case "04n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="cloudy" src={cloudy}></img>
+            break
+        case "09d":
+        case "09n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="light_rain" src={light_rain}></img>
+            break
+        case "10d":
+        case "10n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="rain" src={rain}></img>
+            break
+        case "11d":
+        case "11n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="thunderstorm" src={thunderstorm}></img>
+            break
+        case "13d":
+        case "13n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="snow" src={snow}></img>
+            break
+        case "50d":
+        case "50n":
+            weather = <img style={{ height: 250, marginLeft: "16%" }} alt="haze" src={haze}></img>
+            break
+        default:
+            break;
     }
     return weather
 
 }
-export { getFullDate,getWeathericon }
+export { getFullDate, getWeathericon }

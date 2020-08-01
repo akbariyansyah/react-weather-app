@@ -18,17 +18,17 @@ function Nav() {
                         </li>
                         <li class="nav-item">
                             <Link to="/id">
-                                <p class="nav-link" href="#">id</p>
+                                <p class="nav-link" href="#">Id</p>
                             </Link>
                         </li>
                         <li class="nav-item">
                             <Link to="/zip">
-                                <p class="nav-link" href="#">zip</p>
+                                <p class="nav-link" href="#">Zip</p>
                             </Link>
                         </li>
                         <li class="nav-item">
                             <Link to="/cord">
-                                <p class="nav-link" href="#">coordinates</p>
+                                <p class="nav-link" href="#">Coordinates</p>
                             </Link>
                         </li>
                         <li class="nav-item">

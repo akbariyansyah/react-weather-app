@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div className="jumbotron jumbotron-fluid" id="footer">
             <div className="container">
-                <p className="lead">
+                <p className="footer-text">
                     Copyright Buchori Akbariyansyah 2020
                 <img style={{ height: 30, marginLeft: "1%" }} alt="wink" src={wink}></img>
                 </p>

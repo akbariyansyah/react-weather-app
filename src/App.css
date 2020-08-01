@@ -1,11 +1,10 @@
 body {
-    background-color: #ffe78f !important;
     font-family: 'Mulish', sans-serif;
+    background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); 
 }
 .main-content {
     background-color: seagreen;
     padding-left: 30%;
-  
 }
 #jumbotron {
     border: 2px solid black;
@@ -22,9 +21,14 @@ body {
     height: 30px;
     background-color: white;
     border: 2px solid black;
-    text-align: center;
 }
-
+#footer p {
+    text-align: center;
+    margin-left: 25%;
+    width: 500px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
 #nav {
     margin-top: 10px;
     margin-left: 35%;

@@ -7,7 +7,6 @@ import map from '../../assets/map-marker.gif'
 import { getFullDate, getWeathericon } from '../helpers/helper'
 export default function Card(props) {
 
-
     const conventTemp = temp => {
         let cel = Math.floor(temp - 273)
         return cel
@@ -47,10 +46,6 @@ export default function Card(props) {
                     </td>
                 </tr>
             </table>
-
-
-
-
         </div>
     )
 }
